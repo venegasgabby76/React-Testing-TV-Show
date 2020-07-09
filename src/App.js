@@ -32,12 +32,12 @@ export default function App() {
   // }, []);
 
 
-  useEffect (() => {
+  useEffect(() => {
     fetchShow()
-    .then(response => {
-      setShow(response.data);
-      setSeasons(formatSeasons(response.data._embedded.episodes))
-    })
+      .then(response => {
+        setShow(response.data);
+        setSeasons(formatSeasons(response.data._embedded.episodes))
+      })
   }, []);
 
 
