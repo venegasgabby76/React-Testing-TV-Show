@@ -8,8 +8,10 @@ test("re-renders correctly with the list of episodes", () => {
     // we want to have a mini assertion to check that there are no episodes shown when we first render 
 
     const { rerender, getAllByTestId, queryAllByTestId } = render(<Episodes episodes = {[]} />);
+
     // we are getting the episodes from the app.js file when we are calling on line 63
 
+    // i went in and gave a test id into episodes.js
     const initialEpisodes = queryAllByTestId(/episode/i);
     expect(initialEpisodes).toHaveLength(0);
     
