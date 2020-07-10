@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import Dropdown from "react-dropdown";
 import parse from "html-react-parser";
 
@@ -36,7 +36,8 @@ export default function App() {
     fetchShow()
       .then(response => {
         setShow(response.data);
-        setSeasons(formatSeasons(response._embedded.episodes))
+        console.log(response.data._embedded.episodes);
+        setSeasons(formatSeasons(response.data._embedded.episodes))
       })
   }, []);
 
@@ -51,7 +52,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <img className="poster-img" src={show.image.original} alt={show.name} />
+      <img className="poster-img"  src={show.image.original} alt={show.name} />
       <h1>{show.name}</h1>
       {parse(show.summary)}
       <Dropdown
