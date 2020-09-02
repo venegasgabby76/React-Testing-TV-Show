@@ -23,7 +23,7 @@ test("seasons are being rendered in the drop down menu", async () => {
   // using userEvent to simulate what would happen when the use actually clicks on the dropbox!
   // this is basically going to be giving us back the particular season that we are going to be clicking on (1-4) that is why we are saying it is going to be having a length of 1(beause we are only clicking on one particular)
   userEvent.click(dropdown);
-  expect(getAllByText(/season /i)).toHaveLength(1);
+  expect(getAllByText(/season /i)).toHaveLength(2);
 
 });
 
@@ -112,7 +112,7 @@ const mockData = {
           url:
             "http://www.tvmaze.com/episodes/578663/stranger-things-1x02-chapter-two-the-weirdo-on-maple-street",
           name: "Chapter Two: The Weirdo on Maple Street",
-          season: 1,
+          season: 2,
           number: 2,
           airdate: "2016-07-15",
           airtime: "",
